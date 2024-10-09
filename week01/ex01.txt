@@ -1,0 +1,28 @@
+# 課題01
+
+入力
+180: X
+182: N
+1B0: A
+
+出力
+ACC: Mod[AX, N]
+
+
+00: C0    EOR ACC, ACC
+01: C9    EOR IX,  IX
+02: B5    ADD ACC, (80)
+03: 80
+04: A5    SUB ACC, (82)
+05: 82
+06: 32    BZP 04
+07: 04
+08: B5    ADD ACC, (82)
+09: 82
+0A: BA    ADD IX,  1
+0B: 01
+0C: FD    CMP IX,  (B0)
+0D: B0
+0E: 3A    BN 02
+0F: 02
+10: 0F    HLT
