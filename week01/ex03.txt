@@ -13,39 +13,65 @@
 190: EN (暗号化データ)
 
 
-00: 65    LD ACC, (80)
-01: 80
-02: 6A    LD IX,  1
-03: 01
+00: 6A    LD IX, 1
+01: 01
+02: 7D    ST IX, (50)
+03: 50
+04: 67    LD ACC, (IX+70)
+05: 70
+06: 75    ST ACC, (80)
+07: 80
+08: 30    BA 80
+09: 80
+----------------------
+----------------------
+0A: 6D    LD IX, (50)
+0B: 50
+0C: 77    ST ACC, (IX+90)
+0D: 90
+0E: AA    SUB IX, 1
+0F: 01
+10: 32    BZP 02
+11: 02
+12: 0F    HLT
+
+
+
+# Subroutine
+80: 65    LD ACC, (80)
+81: 80
+82: 6A    LD IX,  1
+83: 01
 -----------------------
-04: 7D    ST IX,  (C0)
-05: C0
-06: 75    ST ACC, (B0)
-07: B0
+84: 7D    ST IX,  (C0)
+85: C0
+86: 75    ST ACC, (B0)
+87: B0
 -----------------------
-08: C0    EOR ACC, ACC 
-09: C9    EOR IX,  IX  
-0A: B5    ADD ACC, (80)
-0B: 80
-0C: A5    SUB ACC, (82)
-0D: 82
-0E: 32    BZP 0C
-0F: 0C
-10: B5    ADD ACC, (82)
-11: 82
-12: BA    ADD IX,  1   
-13: 01
-14: FD    CMP IX,  (B0)
-15: B0
-16: 3A    BN 0A        
-17: 0A
+88: C0    EOR ACC, ACC 
+89: C9    EOR IX,  IX  
+8A: B5    ADD ACC, (80)
+8B: 80
+8C: A5    SUB ACC, (82)
+8D: 82
+8E: 32    BZP 8C
+8F: 8C
+90: B5    ADD ACC, (82)
+91: 82
+92: BA    ADD IX,  1   
+93: 01
+94: FD    CMP IX,  (B0)
+95: B0
+96: 3A    BN 8A        
+97: 8A
 ------------------------
-18: 6D    LD IX,  (C0)
-19: C0
-1A: BA    ADD IX, 1
-1B: 01
-1C: FD    CMP IX, (81)
-1D: 81
-1E: 3A    BN 04
-1F: 04
-20: 0F    HLT
+98: 6D    LD IX,  (C0)
+99: C0
+9A: BA    ADD IX, 1
+9B: 01
+9C: FD    CMP IX, (81)
+9D: 81
+9E: 3A    BN 84
+9F: 84
+A0: 30    BA 0A
+A1: 0A
