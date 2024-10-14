@@ -6,9 +6,6 @@
   year: "2024",
 )
 
-#abstract[
-この文書は筑波大学情報学群情報科学類の卒業研究論文のサンプルである。このファイルを書き換えて、このサンプルと同様の書式の論文を作成できる。
-]
 
 #outline(indent: auto, fill: box(width: 1fr, repeat[．]))
 
